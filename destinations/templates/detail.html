@@ -3,15 +3,15 @@
 {% block title %}Detail{% endblock title %} 
 
 {% block content %}
-    <p>{{destination.name}}</p>
+    <div class ="container"><div class = "jumbotron text-center headerdetailpg"><h1>{{destination.name}}</h1></div></div>
     <p>{{destination.description}}</p>
     <p>{{destination.activities}}</p>
-    <p><img src="{{destination.pretty_picture.url}}"></p>
+    <p><img src="{{destination.pretty_picture.url}}" class="img-fluid col-10" alt="Responsive image"></p>
     <p>{{destination.optimal_visiting_season}}</p>
     <a href="{% url 'destination-update' destination.id %}">
-        <button>Update</button>
+<button type="button" class="btn btn-info">Update</button>
     </a>
     <a href="{% url 'destination-delete' destination.id %}">
-        <button>Delete</button>
+        <button type="button" class="btn btn-danger">Delete</button>
     </a>
 {% endblock content %}
